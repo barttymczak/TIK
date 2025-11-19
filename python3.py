@@ -56,3 +56,9 @@ plt.ylim(-10,100)
 
 plt.savefig("wykres_dane2.pdf")
 plt.close()
+
+x_fit=g(my_t , *parameters2)
+
+chi2= np.sum((x_dane-x_fit)**2/x_err**2)
+dof = len(x_dane) - len(parameters2)
+print("chi2/dof = ", chi2/dof)
